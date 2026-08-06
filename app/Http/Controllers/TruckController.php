@@ -1,0 +1,18 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Http\Controllers;
+
+use App\Support\Dispatch\DispatchData;
+use Illuminate\View\View;
+
+final class TruckController extends Controller
+{
+    public function index(): View
+    {
+        return view('trucks.index', [
+            'trucks' => DispatchData::trucks(),
+        ]);
+    }
+}
